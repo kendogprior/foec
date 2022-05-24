@@ -1,0 +1,23 @@
+{{define "Test" }}
+  {{if eq .Title "Home"}}
+        <h1 class = "heading_1">The Friends of East Cowes</h1>gig
+    {{end}}  
+
+{{end}}
+  
+
+
+
+
+{{define "Info"}}  
+        {{ $showlist := $.Page.Params.showlist}}
+        {{if $showlist}}
+            {{range .Pages}}
+                <h3>{{ .Title}}</h3>
+                <a href="{{.RelPermalink}}">{{.Title}}</a>
+                <hr/>
+            {{end}}
+        {{end}}  
+        {{.Content}}
+{{end}}
+

@@ -1,0 +1,54 @@
+<nav class="sidebar-nav  side-border">
+    <ul class="nav flex-column lift">
+
+        {{ $title:= .Title }}
+        {{ range .Site.Menus.main }}
+            <li class="navrow">
+                <a class = "nav-link"  href="{{ .URL }}"  {{if eq .Title $title}}id="uline" {{end}}>{{.Title}}</a>
+            </li>
+        {{ end }}
+
+        
+
+        <li class="navrow gals">Projects</li>
+       
+        {{ range .Site.Menus.projects }}
+            <li class="navrow">
+                <a class = "nav-link"  href="{{ .URL }}"  {{if eq .Title $title}}id="uline" {{end}}>{{.Title}}</a>
+            </li>
+        {{ end }}
+
+        
+
+
+        {{range .Page.Params.projects}}   
+                <button>
+                    <li class="navrow">
+                        <a href="/projects/{{.url}}">{{.name}}</a> 
+                    </li>
+                </button> 
+        {{end}}
+    
+            
+            
+        
+            
+    </ul>
+</nav>
+
+
+<!--
+      
+    <ul class = "nav flex-column lift">
+        {{ range .Site.RegularPages}}
+        {{$x := .Param "menu"}}
+        {{$p := .Param "title"}}
+        {{if eq $x "main"}}
+            <li class="navrow">
+                <a class = "nav-link"  href="{{ .RelPermalink }}"  {{if eq .Title $title}} id="uline" {{end}}>{{.Title}}</a>
+            </li> 
+            {{end}}
+        {{ end }}
+    </ul>  
+
+-->

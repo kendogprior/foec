@@ -1,0 +1,38 @@
+
+
+        {{$root := .Page.Params.folder}}
+
+       {{if ne $root "projects2"}}
+       <button>
+            <a href="/projects2">GO BACKS</a>
+       </button> 
+       {{end}}
+
+       {{if $root := "projects2"}}
+            {{range .Page.Params.projects}}   
+                <button>
+                    <div id="fred">
+                        <a href="/projects2/{{.url}}">{{.name}}</a>
+                        
+                    </div>
+                </button> 
+            {{end}}
+        {{end}}
+            
+    <!--<h2 class="heading_1">{{.Page.Params.title}}</h2>
+      
+        {{range .Page.Params.projects}}   
+            <button>
+                <div id="jim">
+                    <a href="/projects2/{{.url}}">{{.name}}</a>
+                </div>
+            </button> 
+        {{end}}
+        -->
+        
+    
+        
+    
+
+
+ 
